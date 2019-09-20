@@ -1,0 +1,7 @@
+= Create Feature File
+
+Example Mapping with Concrete Examples to create Acceptance Criteria.
+
+Create Scenario names.
+
+

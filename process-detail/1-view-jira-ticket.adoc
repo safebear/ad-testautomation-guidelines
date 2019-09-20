@@ -1,0 +1,3 @@
+== View Jira Ticket
+
+<Detail here of how Jira Ticket is received>

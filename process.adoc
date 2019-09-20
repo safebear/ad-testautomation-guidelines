@@ -9,24 +9,21 @@ The simple process below outlines how to create an automated test. Please follow
 |link:process-detail/1-view-jira-ticket.adoc[View Jira Ticket]
 
 |2.
-|Create Branch
+|link:process-detail/2-create-branch.adoc[Create Branch]
 
 |3.
-|Create Feature File
+|link:process-detail/3-create-feature-file.adoc[Create Feature File]
 
 |4.
-|Create Acceptance Criteria and Scenario names
+|link:process-detail/4-create-steps.adoc[Create Steps for Scenarios]
 
 |5.
-|Create Steps for Scenarios
+|link:process-detail/5-test-your-scenarios.adoc[Test your Scenarios]
 
 |6.
-|Test your Scenarios
+|link:process-detail/6-run-the-e2e-test-suite.adoc[Run the full e2e test suite]
 
 |7.
-|Run the full e2e test suite
-
-|8.
-|Create a Pull Request
+|link:process-detail/7-create-pull-request.adoc[Create a Pull Request]
 
 |====
