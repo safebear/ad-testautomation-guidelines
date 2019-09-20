@@ -1,0 +1,5 @@
+= Checks When Performing Code Reviews for Pull Requests
+
+. Check that the link:standards.adoc[standards] have been followed
+. Have they created a step when they could've used an existing one?
+. 
