@@ -38,8 +38,8 @@ Copy and paste it into your scenario
 
 . Create Locators.
 
-Locators are in the link:quote-engine-e2e/src/pages/[pages] folder  . Find the correct page.
+Locators are in the link:../quote-engine-e2e/src/pages/[pages] folder  . Find the correct page.
 
-Page names are in the `page-url.enum.ts` <LINK NEEDED HERE> file
+Page names are in the link:../libs/enums/src/lib/page-url.enum.ts[page-url.enum.ts] file
 
 `ctrl + p` to search the Test Automation Framework.

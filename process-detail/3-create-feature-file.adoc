@@ -2,7 +2,7 @@
 
 `quote-engine-e2e` folder is where the framework exists.
 
-The link:quote-engine-e2e/src/features/[features] folder is where you create your feature file.
+The link:../quote-engine-e2e/src/features/[features] folder is where you create your feature file.
 
 Example Mapping with Concrete Examples to create Acceptance Criteria.
 
