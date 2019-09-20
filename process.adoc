@@ -1,0 +1,40 @@
+= Admiral Test Automation Framework: How to Create a Test
+
+The simple process below outlines how to create an automated test. Please follow the links for more detail
+
+|====
+| # | Step | Detail
+
+|1.
+|View Jira Ticket
+|
+
+|2.
+|Create Branch
+|
+
+|3.
+|Create Feature File
+|
+
+|4.
+|Create Acceptance Criteria and Scenario names
+|
+
+|5.
+|Create Steps for Scenarios
+|
+
+|6.
+|Create Locators
+|
+
+|
+|
+|
+
+|
+|
+|
+
+|====

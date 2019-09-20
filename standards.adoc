@@ -1,0 +1,13 @@
+= Standards
+
+|====
+| Standard | Detail
+
+|Naming Feature Files
+|
+
+|====
+
+_Checks When Performing Code Reviews for Pull Requests:_
+
+. Have they created a step when they could've used an existing one?
