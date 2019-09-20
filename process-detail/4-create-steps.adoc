@@ -1,6 +1,10 @@
 = Create Steps for Scenarios
 
-. If po the `navigation` step
+. Start the app with the following command in the Terminal (within Visual Studio Code):
++
+ npm start
++
+. Create the link:../steps/navigation.steps.feature[navigation] step.
 . Use the 'debug' feature to navigate to the page.
 
 ====
@@ -10,8 +14,18 @@
 . This will take you to the step in the `Step Definition` file.
 . In the last 
 
+Don't forget to ensure you're running the correct `Debug` configuration.
+
 ====
 
+Use the `@runThis` tag on the scenario to run it.
+
+====
+*Common Problems*
+
+. `@runThis` tag not in the `protractor.debug.config.ts` <LINK NEEDED HERE> file 
+
+====
 
 . Check the steps files to see if a step you need already exits:
 
@@ -20,4 +34,12 @@
 
 == Using an Exisitng Step
 
+Copy and paste it into your scenario
+
 . Create Locators.
+
+Locators are in the link:quote-engine-e2e/src/pages/[pages] folder  . Find the correct page.
+
+Page names are in the `page-url.enum.ts` <LINK NEEDED HERE> file
+
+`ctrl + p` to search the Test Automation Framework.

@@ -1,1 +1,9 @@
 = Run the full e2e suite
+
+Remove the `@runThis` tag.
+
+In the Terminal run the following command:
+
+ npm run e2e
+
+This will run headlessly. Chrome may crash, if this is the case, re-run the command.

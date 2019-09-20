@@ -27,3 +27,11 @@ The simple process below outlines how to create an automated test. Please follow
 |link:process-detail/7-create-pull-request.adoc[Create a Pull Request]
 
 |====
+
+Navigation:
+
+link:steps/[Steps] to use in your Feature file
+
+link:code-reviews.adoc[Guidance] for Code Reviews
+
+link:standards.adoc[Standards] to follow when creating your tests

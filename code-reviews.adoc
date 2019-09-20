@@ -1,5 +1,6 @@
 = Checks When Performing Code Reviews for Pull Requests
 
-. Check that the link:standards.adoc[standards] have been followed
+. Check that the link:standards.adoc[standards] have been followed.
 . Have they created a step when they could've used an existing one?
 . If a new step has been created, has it been added to the lists.
+. Have the feature files and the page files been created in the correct directories?

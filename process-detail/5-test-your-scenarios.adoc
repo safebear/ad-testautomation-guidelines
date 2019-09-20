@@ -1,3 +1,6 @@
 = Test Your Scenarios
 
+Remove the `debugger` from your navigation step
+
 <Docn't forget to make them fail>
+
