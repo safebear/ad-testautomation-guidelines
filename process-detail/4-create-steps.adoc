@@ -1,36 +1,49 @@
 = Create Steps for Scenarios
+:Author: Simon Stratton
+:Version: 0.1
+:imagesdir: .\support\images\
+:source-highlighter: prettify
+
+:doctype: book
+
+:blank: pass:[ +]
 
 . Start the app with the following command in the Terminal (within Visual Studio Code):
-+
+
  npm start
-+
+
+Usually you will start by creating a link:../steps/navigation.steps.feature[navigation] step.
+
 . Create the link:../steps/navigation.steps.feature[navigation] step.
-. Use the 'debug' feature to navigate to the page.
+. Use the `debug` feature to navigate to the page.
 
 ====
-*How to Use the 'Debug' Feature?*
+*How to Use the `Debug` Feature?*
 
+. Add the `@runThis` tag to your scenario in the Feature File.
 . Hold down the `ctrl` key. This turns the step in the Feature File into a link. Click on the step.
-. This will take you to the step in the `Step Definition` file.
-. In the last 
+. This will take you to the step function in the `Step Definition` file.
+. Add the following keyword as the last line of code within the step function:
++ 
+ debugger;
++
+. Open the `Debug` screen on the left of Visual Studio Code by clicking on the Debug icon on the left. image::debug-icon.png[]
+. Click on the `Play` button at the top of the `Debug` screen to run your test.
 
-Don't forget to ensure you're running the correct `Debug` configuration.
+NOTE: Don't forget to ensure you're running the correct `Debug` configuration.
 
 ====
 
 Use the `@runThis` tag on the scenario to run it.
-
+ 
 ====
 *Common Problems*
 
-. `@runThis` tag not in the `protractor.debug.config.ts` <LINK NEEDED HERE> file 
+. `@runThis` tag may not be set in the link:.\protractor.debug.config.ts[protractor.debug.config.ts] file 
 
 ====
 
-. Check the steps files to see if a step you need already exits:
-
-
-. If the step already exists, follow the steps in the next chapter called `Using an Exisiting Step`. If you have to create a new one, read the `Creating a New Step` chapter.
+Once you've navigated to the page, Check the steps files to see if a step you need already exits. If the step already exists, follow the steps in the next chapter called `Using an Exisiting Step`. If you have to create a new one, read the `Creating a New Step` chapter.
 
 == Using an Exisitng Step
 

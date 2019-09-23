@@ -4,12 +4,40 @@ Create your `Feature File` within the appropriate subfolder of the link:../src/f
 
  createQuote.feature
 
-When creating the `Acceptance Criteria` for your `Feature File`, please use the `Example Mapping` process 
+Your `Feature File` must start with the `Feature` keyword. For example:
 
+[source,gherkin]
+.createPosts.feature
+ Feature: Creating Posts
 
+For a breakdown of the Gherkin keywords, link:./support/bdd-and-gherkin.adoc[please see this guidance].
 
-Example Mapping with Concrete Examples to create Acceptance Criteria.
+== Create Acceptance Criteria
 
-Create Scenario names.
+When creating the `Acceptance Criteria` for your `Feature File`, please use the link:./support/bdd-and-gherkin.adoc[Example Mapping] process. 
 
+Example Acceptance Criteria:
+
+.createPost.feature
+ # The user must be logged in to access this feature
+ # The user must be able to create, read and update posts
+ # Posts must have an expiry date set by the user
+ # Posts must be no longer than 120 characters
+
+And so on. Please use real-world `Concrete Examples` to throughly explore the feature and ensure all `Acceptance Criteria` are identified. _Question Everything!_
+
+== Create Scenario descriptions
+
+Once the `Acceptance Criteria` are defined, the Tester and Developer must create the `Scenario` descriptions. For example:
+
+.createPost.feature
+[source, gherkin]
+ Scenario: A user creates a post
+ Scenario: A user deletes a post
+ Scenario: A user updates a post
+ Scenario: A post expires
+
+And so on. The PO/BA will then review the scenarios to ensure that the acceptance criteria are covered.
+
+Please see the next part of the process for guidance in creating tests.
 

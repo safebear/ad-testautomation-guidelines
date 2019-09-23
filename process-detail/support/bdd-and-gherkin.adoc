@@ -1,7 +1,7 @@
 = Example Mapping and Good Gherkin
 :Author: Simon Stratton
 :Version: 0.1
-:imagesdir: ..\images
+:imagesdir: .\images
 :source-highlighter: prettify
 
 :doctype: book
