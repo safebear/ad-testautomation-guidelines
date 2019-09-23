@@ -1,0 +1,495 @@
+= Example Mapping and Good Gherkin
+:Author: Simon Stratton
+:Version: 0.1
+:imagesdir: ..\images
+:source-highlighter: prettify
+
+:doctype: book
+
+:blank: pass:[ +]
+
+
+In this exercise, we'll explore `Example Mapping` activities and also what makes up good Gherkin.
+
+
+== Example mapping sessions
+
+{blank}
+
+=== What are they?
+
+20-30 minute sessions used to discuss features of an application, in order to fully describe the
+feature in a Feature file and get started developing it. Each feature size should be
+small enough that you can fully understand and discuss it in about 5-10 mins, and it'll have about 5-10
+scenarios that will describe and test it.
+
+{blank}
+
+=== Who does it?
+
+At least one representative of each of the business analyst, developer and tester roles. Usually
+3 people, but no more than 6 people in total
+
+{blank}
+
+=== How do we do them?
+
+Book a room or space for about 20-30 mins, and invite the people needed to make sure a set of
+features can be discussed and explored enough to be confidant enough to create a feature file to
+start developing against.
+
+You can go through as many features as you want to in the session, as long as the session is a maximum
+of 30 mins.
+
+Typically a set of coloured cards are used to document the discussion.
+
+
+****
+*Yellow:*  the feature is written on a yellow card, usually in the format of a user story.
+
+*Blue:* Any rules we know about the feature will be written on blue cards. One per card.
+
+*Green:* Specific/concrete examples that demonstate a rule are written on green cards
+
+*Pink:* Any questions that are raised during the session that need more info, are written on the
+pink cards to be taken away and investigated.
+****
+
+The discussion of each feature goes on for as long as it takes for everyone to be happy that the
+feature is understood, described and complete enough to begin work on.
+
+If there are many pink cards, it can be an indicator that the feature requirements are not well enough
+known and it should be put on hold until more information is available.
+
+If there are many blue cards, it can be an indicator that the feature is too big and should be split
+into smaller parts.
+
+{blank}
+
+=== What happens next?
+
+The cards are taken by the business analyst or feature owner and a Feature file is created. The user
+story becomes the description of the feature, the rules and questions are also included in the file.
+The questions are investigated further, and when the answers are known the feature file should be
+updated accordingly, and any new rules added.
+
+Typically, writing the scenarios is a task completed by both business analysts and testers.
+Either they sit together and write them, or one writes and the other reviews them.
+{blank}
+
+
+
+== EXTRA TIME: Good Gherkin
+
+Steve Jobs (head of Apple), once gave some excellent advice that aptly describes what we need to
+keep in mind when writing good Gherkin.
+
+____
+It doesn't make sense to hire smart people and tell them what to do; we hire smart
+people so they can tell us what to do.
+____
+
+With our requirements, we want to describe the outcomes we need. For example we want to be able
+to log in, we want to be able to register. It doesn't make sense to describe the field types
+and sizes, how many characters the field should be etc, as that is best left to the experts
+to design and apply. This style of writing is known as *Declarative* and is used with Gherkin
+in our Feature files. User Storys are typically written in a declarative style.
+
+{blank}
+
+****
+*User story:*
+
+ As a banking customer
+ I want to be able to log in to the banking website
+ In order to see my bank account details
+****
+
+{blank}
+
+When writing manual tests, traditionally the wording is much more descriptive and instructional.
+We tell a user how to log in, what username and password to use, what specifically should happen
+at each stage. This style is known as *Imperative*.
+
+{blank}
+****
+*Login Test Script*
+
+. Go to Website homepage
+. Select Login button from the top navigation
+. Enter the username "User1"
+. Enter the password "Password1"
+. Enter the code on the security fob
+. Select login button
+****
+
+As you can see, these two styles are very different. Since our requirements will become our
+tests, it is easy to lose our way and start defining the "how" in our Feature files as well
+as the "what". We should avoid this where possible and only describe and test specific
+implementations where there is an actual requirement for it.
+
+Where it is important, we can describe any additional requirements/rules in our Feature file.
+With banking applications there may be extra password strength rules or additional information
+required to login. This can be added as a rule, and a scenario added to test it.
+
+To summarise, the styles of writing requirements and tests are typically either:
+****
+`Declarative:` Style of writing that describes what you want without defining how you want it
+
+`Imperative:` Style of writing that specifically tells you how to do do something to achieve
+what you want
+****
+Gherkin should be declarative. The implementation of a business requirement may change over time,
+but the requirement itself should be fairly stable and have minimal changes.
+
+{blank}
+
+== Feature file sections
+{blank}
+Our Feature files are written in an ubiquitous language (that is, one that is designed to
+be understood by all of BAs, Developers, testers etc) called Gherkin. Gherkin is a human
+readable language, which uses a set of special keywords to give structure and meaning to
+requirements, which means they become executable specifications.
+
+Feature files are made up of several sections that are used to define the feature. Each of
+these sections starts with a special keyword so that Cucumber knows what it is and what to do
+with it.
+
+{blank}
+
+
+=== `Feature`
+
+{blank}
+
+*Description*: This keyword indicates that the text following it is a name of a feature, and a
+summary of the feature being developed
+
+*Use in Feature file:* Must be the first word in the file, followed by a short name
+for the feature
+
+*Other info:* The space immediately under the keyword is a free text area. Anything under the
+"Feature" keyword but before another special word, is ignored at runtime but can be used in
+reporting.
+
+[source,gherkin]
+.LoginExample.feature
+----
+Feature: Login
+  In order to access the website
+  As a user
+  I want to know if my login is successful
+
+  Rules:
+  * The User must be informed if the login information is incorrect
+  * The User must be informed if the login is successful
+
+  Glossary:
+  * User: Someone who wants to create a Tools List using our application
+  * Supporters: This is what the customer calls 'Admin' users.
+
+@HighRisk
+@HighImpact
+Scenario: Navigate and login to the application
+  Given I navigate to the login page
+  When I enter the login details for a 'valid user'
+  Then I can see the following message: 'Login successful'
+
+----
+
+Although Cucumber only uses the Feature name from this first section, we add several other
+sub-sections (not used by Cucumber) for humans to review, discuss and understand the feature.
+These sub-sections are not specifically required, and other sub-sections can be added as needed
+by your model, but common ones you might see are:
+
+*User story*
+
+** Provides a description of the feature
+** Being able to describe the Feature with a single user story helps to ensure feature files
+do not get too big
+
+*Rules*
+
+** Specific requirements/acceptance criteria for the feature.
+** Provided by the Business analyst
+
+*Questions*
+
+** Anyone that reads the Feature file can add questions about the functionality for
+the business analyst to look into.
+** Once a question is followed up and answered, they generally become rules.
+
+*To-Do*
+
+** Tasks that the developers have yet to do
+** Parts of the feature that have not yet been developed (for example, pagination)
+
+*Domain Language/Glossary*
+
+** Any definitions needed to understand the feature,
+** Explanation of any acronyms where required
+
+{blank}
+
+=== `Scenario`
+{blank}
+
+
+*Description:* This keyword is used to create a specific test.
+
+*Use in Feature file:* There can be many of these per Feature file. Each Scenario should have a
+unique and descriptive name.
+
+*Other info:* Scenarios are user readable requirements, written in the decalartive format. Each
+step of the test starts with a GIVEN, WHEN, THEN, AND, OR or BUT keyword, as described further on.
+
+[source,gherkin]
+.LoginExample.feature
+----
+Scenario: Navigate and login to the application
+  Given I navigate to the login page
+  When I enter the login details for a 'valid user'
+  Then I can see the following message: 'Login successful'
+
+----
+
+{blank}
+Scenarios are specific examples that illustrate a business rule, they can also be seen as your
+tests or acceptance tests.
+
+When we write our automation tests, they will link back into the scenario so each step will trigger
+execution of an automation test.
+
+Generally, there will be 5-10 scenarios per Feature. This is not a hard rule, and it will vary
+depending on the feature complexity and the data variables, however if there are large numbers of
+scenarios it can indicate that the Feature is covering too much and should be broken into
+smaller chunks.
+
+Keep in mind that the Feature file is the source of all code and tests in the project, so breaking
+it into smaller chunks later in the project will require expensive rework to refactor code.
+
+{blank}
+
+=== `Scenario Outline`
+{blank}
+
+*Description:* This keyword is used to create a test template, or a data driven test. A Scenario
+Outline will have associated test data and will run once for each set of data it has.
+
+*Use in Feature file:* There can be many of these per Feature file. Each Scenario Outline
+should have a unique and descriptive name.
+
+*Other info:* In order to have multiple test runs for different data sets, we must parameterise the
+data in the test, and provide the data in a table below the final step in the Scenario.
+
+Lets say we have multiple Scenarios where the only difference between them is the data, for
+example logging in as different users. We could write a test for each set of data
+
+[source,gherkin]
+.LoginExample2.feature
+----
+Scenario: Navigate and login to the application as a valid user
+  Given I navigate to the login page
+  When I enter the login details for a validUser
+  Then I can see the following message: 'Login Successful'
+
+
+  Scenario: Navigate and login to the application as an invalid user
+    Given I navigate to the login page
+    When I enter the login details for a invalidUser
+    Then I can see the following message: 'Username or Password is incorrect'
+----
+
+
+Instead of writing several Scenarios we can write a single Scenario Outline and add a table of
+data to be used with it. In order to link the data table to the test, we parameterise the data,
+so that instead of validUser or invalidUser, we have <userType>, then provide the values for
+userType in the table below the Scenario.
+
+[source,gherkin]
+.LoginExample3.feature
+----
+Scenario Outline: Navigate and login to the application
+  Given I navigate to the login page
+  When I enter the login details for a '<userType>'
+  Then I can see the following message: '<validationMessage>'
+  Examples:
+  | userType | validationMessage |
+  | invalidUser | Username or Password is incorrect |
+  | validUser | Login Successful |
+----
+
+
+Note that we have put single quotes around the variables in our Gherkin. Although Gherkin doesn't
+require this, doing so will allow Cucumber to automatically use Regex for us when generating our
+step definitions
+
+{blank}
+
+
+=== `Background`
+
+{blank}
+
+*Description:*  This keyword is used to create a special scenario that is to be run before every
+other scenario. These can also be seen as the pre-requisites or set up for the test.
+
+*Use in Feature file:*  There can only be one per Feature file, and it must be put before the
+first scenario
+
+*Other info:* The Background scenario only contains GIVEN type statements, including AND, OR and BUT.
+
+{blank}
+[source,gherkin]
+.LoginExample4.feature
+----
+
+Background:
+  Given I have opened a Chrome browser
+  And I navigate to the login page
+----
+{blank}
+Since a Feature file is a user readable specification, we need to make sure that the Feature file
+and Scenarios are easy to read and follow. The Background scenario should be as short and simple
+as possible so it is easy to remember as a pre-requiite when reading the other scenarios, in order
+to understand the bigger picture.
+
+Keep it simple.
+
+{blank}
+
+=== Test steps: `GIVEN`, `WHEN`, `THEN`, `AND`, `BUT`
+
+{blank}
+
+*Description:* These keywords are used to define steps in the Scenarios.
+
+*Use in Feature file:* The Keyword must be the first word on the line. Only one keyword
+can be used per line. Try to keep to using 3-6 keywords per scenario.
+
+*Other info:*
+
+** `GIVEN` is a test prerequisite
+** `WHEN` is the action that you’ll be testing
+** `THEN` is the expected results.
+** `AND`, `OR` and `BUT` keywords are used to have multiple `GIVEN`, `WHEN` or `THEN` steps.
+
+{blank}
+[source,gherkin]
+.LoginExample5.feature
+----
+Scenario: Navigate and login to the application as a valid user
+  Given I have opened a Chrome browser
+  And I navigate to the login page
+  OR I click on a login button
+  When I enter the login details for a validUser
+  Then I can see the following message: 'Login Successful'
+
+----
+{blank}
+
+=== `Examples`
+{blank}
+
+*Description:* This keyword is used to provide the data for the Scenario Outline.
+
+*Use in Feature file:* The Keyword must be used for the Scenario Outline, and must be under the
+last step. It can only be used once
+
+*Use in Cucumber:* Cucumber cycles through the data and runs the Scenario outline once per line
+of data.
+
+*Other info:* You can have many lines of data in the example section, but bear in mind that the
+feature file should be easy to read and understand, and although you can list every possible
+data combination (for example many, many sets of login data), these scenarios are also your tests
+so only add the data that needs to be tested.
+
+{blank}
+
+[source,gherkin]
+.LoginExample6.feature
+----
+
+  Examples:
+  | userType | validationMessage |
+  | invalidUser | Username or Password is incorrect |
+  | validUser | Login Successful |
+  | adminUser | Login Successful - Welcome Admin|
+----
+
+
+{blank}
+
+=== Secondary keywords
+
+As well as our primary keywords which allow us to define the feature and tests, we
+can use secondary keywords to add some extra information or add comments.
+
+`@` - Defines tags, used to label scenarios or features. If you tag a feature, it
+is the same as tagging all scenarios in the feature file.
+
+The tags themselves are not special keywords and can be anything you want them to be. Cucumber will
+create them as categories which can be used to group or filter the tests during execution or
+reporting.
+
+
+[source,gherkin]
+.LoginExample7.feature
+----
+@HighRisk
+@Admin
+@Login
+Scenario: Navigate and login to the application
+  Given I navigate to the login page
+  When I enter login details for admin
+  Then I can see the following message: "Logged In"
+----
+
+{blank}
+`"""` - Defines Doc Strings, used to pass through large or multi-line sections of data.
+
+[source,gherkin]
+.LoginExample2.feature
+----
+Scenario: Navigate and login to the application
+  Given I navigate to the login page
+  When I enter login details for admin
+  Then I can see the following message:
+  """
+  Welcome Admin user
+  You have logged in
+  It has been <num> days since you last logged in
+  """
+----
+
+{blank}
+`|` is used to create Data Tables. Data tables are used in all Scenario Outlines to pass through the
+data sets for all test runs.
+
+[source,gherkin]
+.LoginExample6.feature
+----
+
+  Examples:
+  | userType | validationMessage |
+  | invalidUser | Username or Password is incorrect |
+  | validUser | Login Successful |
+  | adminUser | Login Successful - Welcome Admin|
+----
+
+
+{blank}
+`#` is used for Comments, and everything on that line is then ignored by Cucumber. Generally, commenting isn't needed much in Feature files, as by nature
+they should be self explanatory.
+
+[source,gherkin]
+.LoginExample4.feature
+----
+# Check an admin user exists before automating this
+@HighImpact
+Scenario: Navigate and login to the application
+  Given I navigate to the login page
+  When I enter login details for admin
+  Then I can see the following message: "Logged In"
+----
+

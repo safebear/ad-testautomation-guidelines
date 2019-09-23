@@ -1,3 +1,9 @@
 = Create Branch
 
-Naming convention in standards.
+When you first receive a Jira ticket to test, you must check to see if a `Branch` has been created for the ticket (this may have been done by the PO/BA or the Developer). If it hasn't, then one will need to be created before you move on to the next step (Create Feature File).
+
+Please ensure that all `Branches` are created from the `develop` branch, which contains the latest code.
+
+To create a new `Branch`, click on the `develop` branch in the bottom-left corner of Visual Studio Code and choose the `Create New Branch` option. 
+
+IMPORTANT: Please see the test automation link:../standards.adoc[coding standards] as there are strict naming conventions when it comes to creating new branches.

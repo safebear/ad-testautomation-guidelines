@@ -1,8 +1,12 @@
 = Create Feature File
 
-`quote-engine-e2e` folder is where the framework exists.
+Create your `Feature File` within the appropriate subfolder of the link:../src/features/[features folder]. Please use the `.feature` extension for your file. The file name must be in camel case with a lowercase character at the start. For example:
 
-The link:../quote-engine-e2e/src/features/[features] folder is where you create your feature file.
+ createQuote.feature
+
+When creating the `Acceptance Criteria` for your `Feature File`, please use the `Example Mapping` process 
+
+
 
 Example Mapping with Concrete Examples to create Acceptance Criteria.
 
