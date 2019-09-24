@@ -32,22 +32,28 @@ Usually you will start by creating a link:../steps/navigation.steps.feature[navi
 
 NOTE: Don't forget to ensure you're running the correct `Debug` configuration.
 
-====
-
-Use the `@runThis` tag on the scenario to run it.
- 
-====
 *Common Problems*
 
-. `@runThis` tag may not be set in the link:.\protractor.debug.config.ts[protractor.debug.config.ts] file 
+. `@runThis` tag may not be set in the link:.\protractor.debug.config.ts[protractor.debug.config.ts] file.
 
 ====
 
-Once you've navigated to the page, Check the steps files to see if a step you need already exits. If the step already exists, follow the steps in the next chapter called `Using an Exisiting Step`. If you have to create a new one, read the `Creating a New Step` chapter.
+Once you've navigated to the page, Check the relevant steps files below:
 
-== Using an Exisitng Step
+. link:steps/data.steps.feature[Data] 
+. link:steps/actions.steps.feature[Actions] 
+. link:steps/checks.steps.feature[Checks] 
 
-Copy and paste it into your scenario
+To see if the steps you need already exist. If the step already exists, follow the guidance in the next chapter called `Using an Exisiting Step`. If you have to create a new one, read the `Creating a New Step` chapter.
+
+== Using an Existing Step
+
+Copy and paste the example step into your scenario.
+
+=== Data Steps
+
+
+=== Actions and Checks Steps
 
 . Create Locators.
 
@@ -56,3 +62,6 @@ Locators are in the link:../quote-engine-e2e/src/pages/[pages] folder  . Find th
 Page names are in the link:../libs/enums/src/lib/page-url.enum.ts[page-url.enum.ts] file
 
 `ctrl + p` to search the Test Automation Framework.
+
+== Creating a New Step
+
