@@ -1,0 +1,105 @@
+= Introduction to the DOM and HTML 
+:Author: Simon Stratton
+:Version: 0.1
+:imagesdir: ..\images
+:source-highlighter: prettify
+
+:doctype: book
+
+:blank: pass:[ +]
+
+
+== CORE KNOWLEDGE
+
+In this exercise, we'll look at a simple web page and how it is created. We'll explore its DOM (Domain Object Model) and how to identify elements within it.
+
+*For the Cheatsheet of Locators, please sk
+
+We will learn:
+
+. HTML and the DOM
+. Locating web elements
+
+A very simple login page will look like this:
+
+[source, html]
+----
+<html>
+    <head>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <h1>Welcome to the Login Page</h1>
+        <form id="loginForm" name="login">
+            <input type="text">Username</input>
+            <input type="password">Password</input>
+            <button class="btn-submit">Submit</button>
+        </form>
+        <a href="http://safebear.co.uk">Safebear</a>
+    </body>
+</html>
+----
+
+This is called the DOM or the Domain Object Model. It looks very similar to XML, with opening and closing `tags`.
+
+*<html>*
+The root tag is `<html>` which tells the browser that we have written our page in HTML.
+
+*<head>*
+Then we have the `<head>` tag. This usually contains JavaScript and metadata, which we can ignore as Test Automation Engineers. However, it does also contain the page `<title>`.
+
+*<title>*
+The title appears on the page tab and can be useful in identifying the page.
+
+NOTE: The text that is written between the `<title>` tags is exactly what appears on the page. This is the same for all HTML tags.
+
+*<body>*
+This contains the structure and content of the page itself.
+
+NOTE: The `body` doesn't contain any formatting (colours and fonts etc.) as this is done by CSS. However, as Test Automation Engineers, we don't care about the look of the page, just the structure and functionality.
+
+*<h1>*
+This is a `heading` tag. It will print our text (`Welcome to the Login Page`) at the top of the screen in big letters. You can have smaller headings, e.g. `<h2>`, `<h3>` etc or a paragragh `<p>`.
+
+*<form id="loginForm" name="login">*
+This is the first tag which contains `attributes`. There are lots of different types of `attributes`, this `form` tag contains the `id` and the `name` attributes. We can use these to uniquely identify is form on the page.
+
+*<input>* These create input fields on the page. One is of `type` text and one is of `type` password.
+
+*<button class="btn-submit">* This will create a button on the screen. It has a `class` attributes. `class` attributes are used by CSS to format how a web element (e.g. a button) looks on the page. Be careful with these as they're not always unique to each element.
+
+*<a href="http://safebear.co.uk">* is an `anchor` element and it will create a link to the `safebear` website.
+
+NOTE: The `link text` between the tags (`Safebear`) will appear on screen, not the link itself.
+
+You can run this code yourself.
+
+{blank}
+*****
+. Return to VSCode and create a file in the root directory of your project called `simpleLogin.html`.
+. Add the following code:
++
+[source, html]
+----
+<html>
+    <head>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <h1>Welcome to the Login Page</h1>
+        <form id="loginForm" name="login">
+            <input type="text">Username</input>
+            <input type="password">Password</input>
+            <button class="btn-submit">Submit</button>
+        </form>
+        <a href="http://safebear.co.uk">Safebear</a>
+    </body>
+</html>
+----
+. Right-click on the file and choose 'Open in Default Browser'.
+*****
+{blank}
+
+You can see how it looks on the page.
+
+TIP: Why not have a go at creating or changing some elements in the `simpleLogin.html` file yourself? Then use the `Open in Browser` option to view the results.

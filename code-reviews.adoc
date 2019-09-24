@@ -1,6 +1,22 @@
 = Checks When Performing Code Reviews for Pull Requests
 
+<MO: Here are some examples, please adapt these to what is useful to Admiral>
+
+*Standards*
+
+. Has the Feature File been written in a Declarative pattern?
 . Check that the link:standards.adoc[standards] have been followed.
+. Have all the Acceptance Criteria been covered (or marked as n/a with a reason)?
+
+*Steps*
+
 . Have they created a step when they could've used an existing one?
-. If a new step has been created, has it been added to the lists.
+. If a new step has been created, has it been added to the link:./steps[list of example steps]?
+
+*Structure*
+
 . Have the feature files and the page files been created in the correct directories?
+
+*Housekeeping*
+
+. Have any old Scenarios or Scenarios that are no longer necessary been cleaned out?

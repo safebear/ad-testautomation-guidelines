@@ -14,7 +14,11 @@
 
 Usually you will start by creating a link:../steps/navigation.steps.feature[navigation] step.
 
-. Create the link:../steps/navigation.steps.feature[navigation] step.
+. Create the navigation step by copying an example one from the link:../steps/navigation.steps.feature[navigation] examples.
+. Change the page name to the one you need. A list of page names can be found in the link:../libs/enums/src/lib/page-url.enum.ts[page-url.enum.ts] file.
++
+NOTE: If your page doesn't already exist, please ask Mo or Arun to help
++
 . Use the `debug` feature to navigate to the page.
 
 ====
@@ -52,16 +56,39 @@ Copy and paste the example step into your scenario.
 
 === Data Steps
 
+In order to use an existing Data Step, you need to change the following:
+
+<MO: PLEASE COMPLETE THIS>
+
 
 === Actions and Checks Steps
 
-. Create Locators.
+In order to change your `Actions` and `Checks` steps, you'll have to change the test data that will be passed through (e.g. in the `Examples` table) or in the step itself.
 
-Locators are in the link:../quote-engine-e2e/src/pages/[pages] folder  . Find the correct page.
+You'll also need to change the locator to the element on the page that you want to perform an action on (e.g. click()) or check (e.g. isVisible()). Locators for all the pages can be found in the link:../src/pages/[pages] folder. Find the correct page within this folder and see if your locator already exists. If it doesn't, then create one.
 
-Page names are in the link:../libs/enums/src/lib/page-url.enum.ts[page-url.enum.ts] file
+Use a link:./support/css-locators-cheatsheet.adoc[cheatsheet of CSS locators] to help you.
 
-`ctrl + p` to search the Test Automation Framework.
+NOTE: use `ctrl + p` to search the Test Automation Framework for a particular file.
+
+TIP: Here's a link:./support/dom-and-html.adoc[quick refresher on the DOM] if you need it.
 
 == Creating a New Step
 
+In the sections below, we'll take you through how to create each of the types of steps from scratch (i.e. they don't already exist):
+
+=== Creating a new Data Step
+
+<Mo: Please add the detail here>
+
+=== Creating a new Navigation Step
+
+<Mo: Please add the detail here>
+
+=== Creating a new Action Step
+
+<Mo: Please add the detail here>
+
+=== Creating a new Check Step
+
+<Mo: Please add the detail here>

@@ -378,12 +378,15 @@ can be used per line. Try to keep to using 3-6 keywords per scenario.
 [source,gherkin]
 .LoginExample5.feature
 ----
-Scenario: Navigate and login to the application as a valid user
-  Given I have opened a Chrome browser
-  And I navigate to the login page
-  OR I click on a login button
-  When I enter the login details for a validUser
-  Then I can see the following message: 'Login Successful'
+Scenario: a user posts to a friend
+  Given There are two valid users:
+  |user|
+  |bob |
+  |matt|
+  And they are both friends
+  OR they are in the same friend group
+  When I post a message with 'bob'
+  Then it can be seen by 'matt'
 
 ----
 {blank}

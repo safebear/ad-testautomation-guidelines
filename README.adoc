@@ -21,10 +21,7 @@ The simple process below outlines how to create an automated test. Please follow
 |link:process-detail/5-test-your-scenarios.adoc[Test your Scenarios]
 
 |6.
-|link:process-detail/6-run-the-e2e-test-suite.adoc[Run the full e2e test suite]
-
-|7.
-|link:process-detail/7-create-pull-request.adoc[Create a Pull Request]
+|link:process-detail/6-create-pull-request.adoc[Create a Pull Request]
 
 |====
 

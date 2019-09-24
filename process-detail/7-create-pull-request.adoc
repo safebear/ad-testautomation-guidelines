@@ -1,3 +1,0 @@
-= Create a Pull Request
-
-<Please add the steps in here for creating a Pull Request>
