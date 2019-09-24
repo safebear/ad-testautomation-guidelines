@@ -28,9 +28,13 @@ The simple process below outlines how to create an automated test. Please follow
 Additional Guidance:
 
 link:steps/[Steps] to use in your Feature file. These have been broken down into the following categories:
+
 . link:steps/data.steps.feature[Data] - Usually a `Given` statement, these steps set up the test data in the system (e.g. create a quote or a policy).
+
 . link:steps/navigation.steps.feature[Navigation] - Usually a `Given` or `When` statement, these steps help you to navigate to a particular page.
+
 . link:steps/actions.steps.feature[Actions] - Usually a `When` statement, these steps perform an action on the page. E.g. clicking on an element or entering text into an input field.
+
 . link:steps/checks.steps.feature[Checks] - Usually a `Then` statement, these steps check for expected results. E.g. an element is visible, or a form has been updated.
 
 link:code-reviews.adoc[Guidance] for Code Reviews
