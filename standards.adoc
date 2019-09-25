@@ -8,7 +8,7 @@ The table below outlines the standards to following when creating tests in the T
 | Standard | Detail
 
 |Naming `Branches`
-|Branches are named in the following format `feature/<sizing>/<jira-ticket>` where `sizing` is either `minor` or `major` depending on the amount of effort it would take to implement the ticket. The default is `minor`. For example:`feature/minor/ITD-81892`. 
+|Branches are named in the following format `feature/<sizing>/<jira-ticket>` where `sizing` is either `minor` or `major` depending on the amount of effort it would take to implement the ticket. The default is `minor`. For example: `feature/minor/ITD-81892`. 
 
 |Naming `Feature Files`
 |Feature files end with the `.feature` extension and are in camel case (e.g. `createQuote.feature`).

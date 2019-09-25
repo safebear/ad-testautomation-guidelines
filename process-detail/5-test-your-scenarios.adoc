@@ -4,8 +4,8 @@ Don't forget to test your new Scenario!
 
 . Remove the `debugger` from your navigation step
 . Ensure the scenario has the `@runThis` tag
-. Open the `Debug` screen on the left of Visual Studio Code by clicking on the Debug icon on the left. image::debug-icon.png[]
-. Click on the `Play` button at the top of the `Debug` screen to run your test.
+. Open the `Debug` screen on the left of Visual Studio Code by clicking on the Debug icon on the left. image:support/images/debug-icon.png[title=debugicon]
+. Click on the `Play` button at the top of the `Debug` screen to run your test.image:support/images/debug-play.png[title=debugplay]
 . Ensure your test passes.
 
 It's also worth checking that your test will fail:

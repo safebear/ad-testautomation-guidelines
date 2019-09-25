@@ -1,7 +1,6 @@
 = Create Steps for Scenarios
 :Author: Simon Stratton
 :Version: 0.1
-:imagesdir: .\support\images\
 :source-highlighter: prettify
 
 :doctype: book
@@ -31,14 +30,16 @@ NOTE: If your page doesn't already exist, please ask Mo or Arun to help
 + 
  debugger;
 +
-. Open the `Debug` screen on the left of Visual Studio Code by clicking on the Debug icon on the left. image::debug-icon.png[]
-. Click on the `Play` button at the top of the `Debug` screen to run your test.
+. Open the `Debug` screen on the left of Visual Studio Code by clicking on the Debug icon on the left. image:support/images/debug-icon.png[title=debugicon]
+. Click on the `Play` button at the top of the `Debug` screen to run your test. image:support/images/debug-play.png[title=debugplay]
 
 NOTE: Don't forget to ensure you're running the correct `Debug` configuration.
 
 *Common Problems*
 
 . `@runThis` tag may not be set in the link:.\protractor.debug.config.ts[protractor.debug.config.ts] file.
+
+NOTE: use `ctrl + p` to search the Test Automation Framework for a particular file.
 
 ====
 
@@ -65,11 +66,13 @@ In order to use an existing Data Step, you need to change the following:
 
 In order to change your `Actions` and `Checks` steps, you'll have to change the test data that will be passed through (e.g. in the `Examples` table) or in the step itself.
 
-You'll also need to change the locator to the element on the page that you want to perform an action on (e.g. click()) or check (e.g. isVisible()). Locators for all the pages can be found in the link:../src/pages/[pages] folder. Find the correct page within this folder and see if your locator already exists. If it doesn't, then create one.
+You'll also need to change the locator to the element on the page that you want to perform an action on (e.g. `click()`) or check (e.g. `isVisible()`). Locators for all the pages can be found in the link:../src/pages/[pages] folder. Find the correct page within this folder and see if your locator already exists. If it doesn't, then create one.
 
 Use a link:./support/css-locators-cheatsheet.adoc[cheatsheet of CSS locators] to help you.
 
-NOTE: use `ctrl + p` to search the Test Automation Framework for a particular file.
+Don't forget to use the `ctrl + f` and the search box in DevTools to test your CSS locator.
+
+image::support/images/search-dom.png[title=searchdom]
 
 TIP: Here's a link:./support/dom-and-html.adoc[quick refresher on the DOM] if you need it.
 
